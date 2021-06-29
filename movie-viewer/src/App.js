@@ -41,7 +41,13 @@ function App() {
       </header>
       <main>
         {genres.map((genre) => {
-          return <GenreRoll data={movieData} genreTitle={genre}></GenreRoll>;
+          return (
+            <GenreRoll
+              data={movieData}
+              genreTitle={genre}
+              key={genre}
+            ></GenreRoll>
+          );
         })}
       </main>
     </div>

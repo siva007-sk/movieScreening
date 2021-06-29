@@ -1,6 +1,11 @@
 import { useState } from "react";
 import MovieDetails from "./MovieDetails";
 
+/**
+ * to display the thumbnail image and modal for additional details for the selected movie
+ * @param {data: the details of the particular movie} props
+ * @returns
+ */
 function MovieThumbnailCard(props) {
   const [displayMovieDetails, setDisplayMovieDetails] = useState(false);
   if (props.data) {
@@ -14,10 +19,13 @@ function MovieThumbnailCard(props) {
           <div
             className="modal-content"
             style={{
-              "background-image": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.data.backdrop})`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.data.backdrop})`,
             }}
           >
-            <span className="close" onClick={() => setDisplayMovieDetails(false)}>
+            <span
+              className="close"
+              onClick={() => setDisplayMovieDetails(false)}
+            >
               &times;
             </span>
             <MovieDetails details={props.data}></MovieDetails>

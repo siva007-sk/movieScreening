@@ -1,4 +1,8 @@
-
+/**
+ * displays the details of the movie in the modal
+ * @param {details: the details of the particular movie} props
+ * @returns
+ */
 function MovieDetails(props) {
   return (
     <div className="detailsGrid">
