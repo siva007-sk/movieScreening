@@ -8,16 +8,16 @@ function MovieThumbnailCard(props) {
       <div className="card">
         <div
           id="myModal"
-          class="modal"
+          className="modal"
           style={{ display: `${displayMovieDetails ? "block" : "none"}` }}
         >
           <div
-            class="modal-content"
+            className="modal-content"
             style={{
               "background-image": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.data.backdrop})`,
             }}
           >
-            <span class="close" onClick={() => setDisplayMovieDetails(false)}>
+            <span className="close" onClick={() => setDisplayMovieDetails(false)}>
               &times;
             </span>
             <MovieDetails details={props.data}></MovieDetails>

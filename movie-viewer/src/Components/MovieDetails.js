@@ -12,7 +12,7 @@ function MovieDetails(props) {
           <h3>{props.details.title}</h3>
           <div>
             <div
-              class="Stars"
+              className="Stars"
               style={{ "--rating": props.details.imdb_rating }}
             ></div>
           </div>

@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import MovieThumbnailCard from "./Components/MovieThumbnailCard";
+import GenreRoll from "./Components/GenreRoll";
 
 function App() {
   const [movieData, setMovieData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const genres = [
+    "Action",
+    "Crime",
+    "Drama",
+    "Animation",
+    "Adventure",
+    "Family",
+    "Thriller",
+  ];
 
   useEffect(() => {
-    fetch("https://wookie.codesubmit.io/movies", {
+    fetch(`https://wookie.codesubmit.io/movies?q=${searchQuery}`, {
       method: "GET",
       headers: new Headers({ Authorization: "Bearer Wookie2021" }),
     })
@@ -20,39 +30,19 @@ function App() {
     <div className="App">
       <header className="heading">
         <h1>Wookie Movies</h1>
-        <input placeholder="Search" className="search-box"></input>
+        <input
+          placeholder="Search"
+          className="search-box"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+          }}
+        ></input>
       </header>
       <main>
-        <div className="movieRoll">
-          <h3>Action</h3>
-          <div className="scrollmenu">
-            {movieData.map((movie) => {
-              if (movie.genres.indexOf("Action") !== -1) {
-                return <MovieThumbnailCard data={movie}></MovieThumbnailCard>;
-              }
-            })}
-          </div>
-        </div>
-        <div className="movieRoll">
-          <h3>Crime</h3>
-          <div className="scrollmenu">
-            {movieData.map((movie) => {
-              if (movie.genres.indexOf("Crime") !== -1) {
-                return <MovieThumbnailCard data={movie}></MovieThumbnailCard>;
-              }
-            })}
-          </div>
-        </div>
-        <div className="movieRoll">
-          <h3>Drama</h3>
-          <div className="scrollmenu">
-            {movieData.map((movie) => {
-              if (movie.genres.indexOf("Drama") !== -1) {
-                return <MovieThumbnailCard data={movie}></MovieThumbnailCard>;
-              }
-            })}
-          </div>
-        </div>
+        {genres.map((genre) => {
+          return <GenreRoll data={movieData} genreTitle={genre}></GenreRoll>;
+        })}
       </main>
     </div>
   );
