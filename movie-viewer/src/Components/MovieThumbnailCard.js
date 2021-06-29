@@ -9,7 +9,7 @@ function MovieThumbnailCard(props) {
         <div
           id="myModal"
           class="modal"
-          style={{ display: `${displayMovieDetails ? "block" : "none"}` }}
+          style={{ display: `${displayMovieDetails ? "block" : "none"}`,backgroundImage:`url(${props.data.backdrop})` }}
         >
           <div class="modal-content">
             <span class="close" onClick={() => setDisplayMovieDetails(false)}>
