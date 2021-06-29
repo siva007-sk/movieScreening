@@ -7,16 +7,21 @@ function MovieDetails(props) {
         className="poster"
       ></img>
       <div className="details">
-        <div>
+        <div className="row">
           <h3>{props.details.title}</h3>
           <div>{props.details.imdb_rating}</div>
         </div>
-        <div>
-          {new Date(props.details.released_on).getFullYear()}|
-          {props.details.length}|{props.details.director}
+        <div className="row">
+          <p>
+            {new Date(props.details.released_on).getFullYear()} | {props.details.length} | {props.details.director}
+          </p>
         </div>
-        <div>cast: {props.details.cast.join(', ')}</div>
-        <div>{props.details.overview}</div>
+        <div className="row">
+          <p><strong>Cast: </strong> {props.details.cast.join(", ")}</p>
+        </div>
+        <div className="row">
+          <p>{props.details.overview}</p>
+        </div>
       </div>
     </div>
   );

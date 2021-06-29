@@ -27,8 +27,8 @@
 }
 .scrollmenu {
   overflow: auto;
-  white-space: nowrap;
   display: flex;
+  padding-bottom: 8px;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -52,6 +52,7 @@
 .movieRoll h3 {
   font-size: 24px;
   color: #fff;
+  padding-bottom: 10px;
 }
 
 .modal {
@@ -70,11 +71,10 @@
 /* Modal Content/Box */
 .modal-content {
   background: #3a6186;
-  background: linear-gradient(to right, #89253e, #3a6186);
   margin: 4% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid rgb(8, 8, 8);
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 60%; /* Could be more or less, depending on screen size */
   box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.6);
 }
 
@@ -105,7 +105,21 @@
 .details {
   grid-column: 2/2;
   margin: 60px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+.details p{
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.row{
+  padding-bottom: 10px;
+  display: flex;
+}
+
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
